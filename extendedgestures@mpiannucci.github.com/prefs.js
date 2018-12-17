@@ -28,23 +28,25 @@ const ExtendedGesturesSettingsWidget = new GObject.Class({
 
     _buildUI: function() {
         // The swipe options grid setup
-        this._swipeOptionsFrame = new Gtk.Frame();
-        this._swipeOptionsFrame.set_label("Swipe Options");
+        this._swipeOptionsFrame = new Gtk.Frame({label: "Swipe Options", 
+        										margin: 20});
+        this._swipeOptionsFrame.set_label_align(0, 1);
         this._swipeOptionsGrid = new Gtk.Grid({
             column_homogeneous: false,
-            column_spacing: 20
+            column_spacing: 20,
+            margin: 20
         });
         this._swipeOptionsFrame.add(this._swipeOptionsGrid);
         
         // The swipe options
         // Three finger horizontal
-        this._leftThreeLabel = new Gtk.Label({label: "3 Finger Left Horizontal Gestures"});
+        this._leftThreeLabel = new Gtk.Label({label: "3 Finger Left Horizontal Gestures", 													xalign: 0});
         this._leftThreeSwitch = new Gtk.Switch();
         this._leftThreeCombo = new Gtk.ComboBoxText();
         this._swipeOptionsGrid.attach(this._leftThreeLabel, 0, 0, 1, 1);
         this._swipeOptionsGrid.attach(this._leftThreeSwitch, 1, 0, 1, 1);
         this._swipeOptionsGrid.attach(this._leftThreeCombo, 2, 0, 1, 1);
-        this._rightThreeLabel = new Gtk.Label({label: "3 Finger Right Horizontal Gestures"});
+        this._rightThreeLabel = new Gtk.Label({label: "3 Finger Right Horizontal Gestures", 												xalign: 0});
         this._rightThreeSwitch = new Gtk.Switch();
         this._rightThreeCombo = new Gtk.ComboBoxText();
         this._swipeOptionsGrid.attach(this._rightThreeLabel, 0, 1, 1, 1);
@@ -52,13 +54,13 @@ const ExtendedGesturesSettingsWidget = new GObject.Class({
         this._swipeOptionsGrid.attach(this._rightThreeCombo, 2, 1, 1, 1);
 
         // Three finger vertical
-        this._upThreeLabel = new Gtk.Label({label: "3 Finger Up Vertical Gestures"});
+        this._upThreeLabel = new Gtk.Label({label: "3 Finger Up Vertical Gestures", 											xalign: 0});
         this._upThreeSwitch = new Gtk.Switch();
         this._upThreeCombo = new Gtk.ComboBoxText();
         this._swipeOptionsGrid.attach(this._upThreeLabel, 0, 2, 1, 1);
         this._swipeOptionsGrid.attach(this._upThreeSwitch, 1, 2, 1, 1);
         this._swipeOptionsGrid.attach(this._upThreeCombo, 2, 2, 1, 1);
-        this._downThreeLabel = new Gtk.Label({label: "3 Finger Down Vertical Gestures"});
+        this._downThreeLabel = new Gtk.Label({label: "3 Finger Down Vertical Gestures", 												xalign: 0});
         this._downThreeSwitch = new Gtk.Switch();
         this._downThreeCombo = new Gtk.ComboBoxText();
         this._swipeOptionsGrid.attach(this._downThreeLabel, 0, 3, 1, 1);
@@ -66,7 +68,7 @@ const ExtendedGesturesSettingsWidget = new GObject.Class({
         this._swipeOptionsGrid.attach(this._downThreeCombo, 2, 3, 1, 1);
 
         // Four finger horizontal
-        this._horizontalFourLabel = new Gtk.Label({label: "4 Finger Horizontal Gestures"});
+        this._horizontalFourLabel = new Gtk.Label({label: "4 Finger Horizontal Gestures", 														xalign: 0});
         this._horizontalFourSwitch = new Gtk.Switch();
         this._horizontalFourCombo = new Gtk.ComboBoxText();
         this._swipeOptionsGrid.attach(this._horizontalFourLabel, 0, 4, 1, 1);
@@ -74,7 +76,7 @@ const ExtendedGesturesSettingsWidget = new GObject.Class({
         this._swipeOptionsGrid.attach(this._horizontalFourCombo, 2, 4, 1, 1);
 
         // Four finger vertical
-        this._verticalFourLabel = new Gtk.Label({label: "4 Finger Vertical Gestures"});
+        this._verticalFourLabel = new Gtk.Label({label: "4 Finger Vertical Gestures", 														xalign: 0});
         this._verticalFourSwitch = new Gtk.Switch();
         this._verticalFourCombo = new Gtk.ComboBoxText();
         this._swipeOptionsGrid.attach(this._verticalFourLabel, 0, 5, 1, 1);
@@ -82,22 +84,24 @@ const ExtendedGesturesSettingsWidget = new GObject.Class({
         this._swipeOptionsGrid.attach(this._verticalFourCombo, 2, 5, 1, 1);
 
         // The sensitivity options
-        this._sensitivityOptionsFrame = new Gtk.Frame();
-        this._sensitivityOptionsFrame.set_label("Sensitivity Options");
+        this._sensitivityOptionsFrame = new Gtk.Frame({label: "Sensitivity Options", 
+        												margin: 20});
+       	this._sensitivityOptionsFrame.set_label_align(0, 1);
         this._sensitivityOptionsGrid = new Gtk.Grid({
             column_homogeneous: false,
-            column_spacing: 20
+            column_spacing: 20,
+            margin: 20
         });
         this._sensitivityOptionsFrame.add(this._sensitivityOptionsGrid);
 
         // Vertical sensitivity
-        this._verticalSensitivityLabel = new Gtk.Label({label: "Vertical Sensitivity Adjustment"});
+        this._verticalSensitivityLabel = new Gtk.Label({label: "Vertical Sensitivity Adjustment", 															xalign: 0});
         this._verticalSensitivitySpinButton = Gtk.SpinButton.new_with_range(-50, 50, 1);
         this._sensitivityOptionsGrid.attach(this._verticalSensitivityLabel, 0, 0, 1, 1);
         this._sensitivityOptionsGrid.attach(this._verticalSensitivitySpinButton, 1, 0, 1, 1);
 
         // Horizontal sensitivity
-        this._horizontalSensitivityLabel = new Gtk.Label({label: "Horizontal Sensitivity Adjustment"});
+        this._horizontalSensitivityLabel = new Gtk.Label({label: "Horizontal Sensitivity Adjustment", 																xalign: 0});
         this._horizontalSensitivitySpinButton = Gtk.SpinButton.new_with_range(-50, 50, 1);
         this._sensitivityOptionsGrid.attach(this._horizontalSensitivityLabel, 0, 1, 1, 1);
         this._sensitivityOptionsGrid.attach(this._horizontalSensitivitySpinButton, 1, 1, 1, 1);
