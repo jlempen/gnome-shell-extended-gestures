@@ -83,7 +83,7 @@ const ExtendedGesturesSettingsWidget = new GObject.Class({
 
         // The sensitivity options
         this._sensitivityOptionsFrame = new Gtk.Frame({label: "Sensitivity Options", margin: 20});
-       	this._sensitivityOptionsFrame.set_label_align(0, 1);
+        this._sensitivityOptionsFrame.set_label_align(0, 1);
         this._sensitivityOptionsGrid = new Gtk.Grid({
             column_homogeneous: false,
             column_spacing: 20,
