@@ -21,15 +21,13 @@ const ExtendedGesturesSettingsWidget = new GObject.Class({
 
     _init: function (params) {
         this.parent (params);
-
         this._buildUI();
         this._initUI();
     },
 
     _buildUI: function() {
         // The swipe options grid setup
-        this._swipeOptionsFrame = new Gtk.Frame({label: "Swipe Options", 
-        										margin: 20});
+        this._swipeOptionsFrame = new Gtk.Frame({label: "Swipe Options", margin: 20});
         this._swipeOptionsFrame.set_label_align(0, 1);
         this._swipeOptionsGrid = new Gtk.Grid({
             column_homogeneous: false,
@@ -84,8 +82,7 @@ const ExtendedGesturesSettingsWidget = new GObject.Class({
         this._swipeOptionsGrid.attach(this._verticalFourCombo, 2, 5, 1, 1);
 
         // The sensitivity options
-        this._sensitivityOptionsFrame = new Gtk.Frame({label: "Sensitivity Options", 
-        												margin: 20});
+        this._sensitivityOptionsFrame = new Gtk.Frame({label: "Sensitivity Options", margin: 20});
        	this._sensitivityOptionsFrame.set_label_align(0, 1);
         this._sensitivityOptionsGrid = new Gtk.Grid({
             column_homogeneous: false,
